@@ -9,13 +9,18 @@
  * @author  Michael Kšlling and David J. Barnes
  * @version 2011.07.31
  */
+
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
-    private Circle sun;
-
+    private Square square;
+    private Person person;
+    private Triangle triangle;
+    private Triangle triangle1;
+    private Triangle triangle2;
+    private Circle circle;
+    private Circle circle1;
+    private Circle circle2;
+    private Circle circle3;
     /**
      * Constructor for objects of class Picture
      */
@@ -29,31 +34,67 @@ public class Picture
      */
     public void draw()
     {
-        wall = new Square();
-        wall.moveHorizontal(-140);
-        wall.moveVertical(20);
-        wall.changeSize(120);
-        wall.makeVisible();
         
-        window = new Square();
-        window.changeColor("black");
-        window.moveHorizontal(-120);
-        window.moveVertical(40);
-        window.changeSize(40);
-        window.makeVisible();
+        
+        triangle = new Triangle();  
+        triangle.changeSize(60, 700);
+        triangle.moveHorizontal(140);
+        triangle.moveVertical(100);
+        triangle.makeVisible();
+        
+        triangle1 = new Triangle();  
+        triangle1.changeColor("green");
+        triangle1.changeSize(60, 700);
+        triangle1.moveHorizontal(-20);
+        triangle1.moveVertical(100);
+        triangle1.makeVisible();
+        
+        person = new Person();
+        person.changeColor("black");
+        person.moveHorizontal(-160);
+        person.moveVertical(20);
+        person.makeVisible();
+        
+        square = new Square();
+        square.changeColor("blue");
+        square.moveHorizontal(-210);
+        square.moveVertical(130);
+        square.changeSize(40);
+        square.makeVisible();
 
-        roof = new Triangle();  
-        roof.changeSize(60, 180);
-        roof.moveHorizontal(20);
-        roof.moveVertical(-60);
-        roof.makeVisible();
+        triangle2 = new Triangle();  
+        triangle2.changeSize(120, 140);
+        triangle2.moveHorizontal(60);
+        triangle2.moveVertical(-80);
+        triangle2.makeVisible();
 
-        sun = new Circle();
-        sun.changeColor("yellow");
-        sun.moveHorizontal(100);
-        sun.moveVertical(-40);
-        sun.changeSize(80);
-        sun.makeVisible();
+        circle = new Circle();
+        circle.changeColor("yellow");
+        circle.moveHorizontal(140);
+        circle.moveVertical(-80);
+        circle.changeSize(50);
+        circle.makeVisible();
+        
+        circle1 = new Circle();
+        circle1.changeColor("white");
+        circle1.moveHorizontal(15);
+        circle1.moveVertical(20);
+        circle1.changeSize(50);
+        circle1.makeVisible();
+        
+        circle2 = new Circle();
+        circle2.changeColor("red");
+        circle2.moveHorizontal(25);
+        circle2.moveVertical(30);
+        circle2.changeSize(30);
+        circle2.makeVisible();
+        
+        circle3 = new Circle();
+        circle3.changeColor("black");
+        circle3.moveHorizontal(30);
+        circle3.moveVertical(35);
+        circle3.changeSize(20);
+        circle3.makeVisible();
     }
 
     /**
@@ -61,12 +102,14 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        if (wall != null)   // only if it's painted already...
+        if (square != null)   // only if it's painted already...
         {
-            wall.changeColor("black");
-            window.changeColor("white");
-            roof.changeColor("black");
-            sun.changeColor("black");
+            square.changeColor("black");
+            person.changeColor("black");
+            triangle.changeColor("black");
+            triangle1.changeColor("black");
+            triangle2.changeColor("black");
+            circle.changeColor("black");
         }
     }
 
@@ -75,12 +118,12 @@ public class Picture
      */
     public void setColor()
     {
-        if (wall != null)   // only if it's painted already...
+        if (square != null)   // only if it's painted already...
         {
-            wall.changeColor("red");
-            window.changeColor("black");
-            roof.changeColor("green");
-            sun.changeColor("yellow");
+            square.changeColor("red");
+            person.changeColor("blue");
+            triangle.changeColor("green");
+            circle.changeColor("yellow");
         }
     }
 }
